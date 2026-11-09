@@ -1,0 +1,1 @@
+import {requireStudent,api} from './api.js';requireStudent();document.getElementById('check').onclick=async()=>{const out=document.getElementById('result');out.textContent='Loading…';try{out.textContent=JSON.stringify(await api('/api'),null,2)}catch(e){out.textContent=e.message}};

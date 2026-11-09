@@ -1,0 +1,133 @@
+{
+  "info": {
+    "name": "LEDGER Evaluation API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health / API manifest",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:5000/api",
+        "header": []
+      }
+    },
+    {
+      "name": "Register student (Local JSON)",
+      "request": {
+        "method": "POST",
+        "url": "http://localhost:5000/api/json/students",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Demo Student\",\n  \"email\": \"demo@example.com\",\n  \"studentId\": \"LEDGER-001\",\n  \"password\": \"demo123\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "url": "http://localhost:5000/api/auth/login",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"demo@example.com\",\n  \"password\": \"demo123\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Get local JSON students",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:5000/api/json/students",
+        "header": []
+      }
+    },
+    {
+      "name": "Create subject (Local JSON)",
+      "request": {
+        "method": "POST",
+        "url": "http://localhost:5000/api/json/subjects",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"studentId\": \"LEDGER-001\",\n  \"name\": \"Data Structures\",\n  \"credits\": 4,\n  \"internal\": 32,\n  \"external\": 45,\n  \"attendance\": 88\n}"
+        }
+      }
+    },
+    {
+      "name": "Get local JSON subjects",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:5000/api/json/subjects?studentId=LEDGER-001",
+        "header": []
+      }
+    },
+    {
+      "name": "MongoDB: Create student",
+      "request": {
+        "method": "POST",
+        "url": "http://localhost:5000/api/students",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Mongo Demo\",\n  \"email\": \"mongo@example.com\",\n  \"studentId\": \"MONGO-001\",\n  \"password\": \"demo123\"\n}"
+        }
+      }
+    },
+    {
+      "name": "MongoDB: Get students",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:5000/api/students",
+        "header": []
+      }
+    },
+    {
+      "name": "MongoDB: Create subject",
+      "request": {
+        "method": "POST",
+        "url": "http://localhost:5000/api/subjects",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"studentId\": \"MONGO-001\",\n  \"name\": \"Algorithms\",\n  \"credits\": 4,\n  \"internal\": 30,\n  \"external\": 40,\n  \"attendance\": 90\n}"
+        }
+      }
+    },
+    {
+      "name": "External API quote",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:5000/api/external/quote",
+        "header": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+const r=require('express').Router(),c=require('../controllers/jsonController');r.get('/students',c.getStudents);r.post('/students',c.register);r.get('/subjects',c.getSubjects);r.post('/subjects',c.createSubject);r.put('/subjects/:id',c.updateSubject);r.delete('/subjects/:id',c.deleteSubject);module.exports=r;

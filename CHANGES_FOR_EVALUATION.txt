@@ -1,0 +1,16 @@
+LEDGER — CHANGE SUMMARY
+
+Student sidebar now shows only:
+- My Subjects
+- Study Planner
+- Analysis
+
+Removed the redundant Student ID column from the subject table. Student ID remains visible in the profile area.
+
+Retained for instructor demonstration (not linked in student sidebar):
+- http://localhost:5000/external-feed.html
+- http://localhost:5000/debug-demo.html
+
+Their HTML, JavaScript, backend endpoint and API logic are still included.
+
+Start: npm install (if dependencies are not installed), npm start, then open http://localhost:5000/login.html
